@@ -1,23 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./login.jsx";
-import Hours from "./views/hours.jsx";
-import HomePage from "./views/homepage.jsx";
-import UserPage from "./views/userpage.jsx";
-import AttendancePage from "./views/attendance.jsx";
-import Layout from "./Layout.jsx";
-import AdminPage from "./views/admin_page.jsx";
-import "../Theming/theming.css";
+import ReactDOM from 'react-dom/client'
+import Layout from './layout'
+import Login from '../views/login'
+import HomePage from '../views/homepage';
+import Hours from '../views/hourspage';
+import UserPage from '../views/userpage';
+import AttendancePage from '../views/attendancepage';
+import AdminPage from '../views/adminpage';
 
-// Importing the Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route element={<Layout />}>
+      <Route element={<Layout children={[]} />}>
         <Route path="/home" element={<HomePage />} />
         <Route path="/hours" element={<Hours />} />
         <Route path="/userpage" element={<UserPage />} />
@@ -26,4 +25,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </Route>
     </Routes>
   </BrowserRouter>
+  </React.StrictMode>
 );

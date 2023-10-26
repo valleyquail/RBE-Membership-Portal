@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose, {Schema, InferSchemaType} from "mongoose";
 
-const { Schema } = mongoose;
+
 
 const UserSchema = new Schema({
   name: { type: String, required: true },
@@ -13,4 +13,9 @@ const UserSchema = new Schema({
   admin: { type: Boolean, required: false },
 });
 
-export default mongoose.model("User", UserSchema);
+//Infers the schema and interface type of the model and then exports it
+type IUserSchema = InferSchemaType<typeof UserSchema>;
+
+const UserModel =  mongoose.model<IUserSchema>("Event", UserSchema);
+
+export default UserModel;

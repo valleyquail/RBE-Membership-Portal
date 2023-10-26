@@ -1,13 +1,27 @@
+# React + TypeScript + Vite
 
-#Final Project
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
--We created an in-depth implementation of a club attendance management system. Building on the initial starting point of a basic attendance tracker, we added the ability for each user to create and update their own personal profile, and log in using both google and github oAuth, as well as the normal method. We also implemented an event system that appears on the home page of the website, which can be edited by a user with admin priveleges. 
-Website: https://nikesh-nick-will.glitch.me/
+Currently, two official plugins are available:
 
-`Using google or github Oauth should work. If there is some issue, the account <username: 12 password: 12> will work 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
--used React and Bootstrap for the frontend, Javascript for the servercode and client code
+## Expanding the ESLint configuration
 
--There were several issues with the project, notably Glitch interfering with Oauth capabilities, but most of the development went fairly smoothly
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
--Nicholas Heineman worked on backend for the events and profile information, Will Ryan worked on admin event managing and Oauth, and Nikesh Walling worked on front end managament of new content and integrating it with old content   
+- Configure the top-level `parserOptions` property like this:
+
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
+```
+
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
