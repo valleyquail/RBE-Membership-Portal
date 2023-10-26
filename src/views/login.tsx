@@ -10,8 +10,8 @@ const Login = () => {
         className="d-flex flex-wrap py-3 border-bottom primary-color"
         fixed="top"
       >
-        <div className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          {<Image src={Logo} alt="Logo" width="100vw" />}
+        <div className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis">
+          {<Image src={Logo} alt="Logo" width="100vw" height="100vh" />}
           <div className="fs-1" style={{ color: "white" }}>
             Member Portal
           </div>
@@ -20,7 +20,7 @@ const Login = () => {
 
       <div
         className="modal show"
-        style={{ display: "block", position: "static", marginTop: "200" }}
+        style={{ display: "block", position: "static", marginTop: "20vh" }}
       >
         <Modal.Dialog>
           <Modal.Header className="p-5 pb-4 border-bottom-0 justify-content-center">
