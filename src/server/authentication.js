@@ -1,5 +1,6 @@
 import "dotenv/config";
 import passport from "passport";
+import User from "../models/User.js";
 import GitHubStrategy from "passport-github2";
 import GoogleStrategy from "passport-google-oauth2";
 // import MicrosoftStrategy from "passport-microsoft";
